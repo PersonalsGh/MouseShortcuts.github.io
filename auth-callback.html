@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MouseShortcuts - Redirecting...</title>
+  <style>
+    body {
+      background: #0f1115;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container { text-align: center; }
+    h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    p { color: #9ca3af; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Redirecting to MouseShortcuts...</h2>
+    <p>If the app doesn't open, click <a id="link" href="#" style="color: #60a5fa;">here</a>.</p>
+  </div>
+  <script>
+    const hash = window.location.hash;
+    const deepLink = 'mouseshortcuts://auth-callback' + hash;
+    document.getElementById('link').href = deepLink;
+    window.location.href = deepLink;
+  </script>
+</body>
+</html>
