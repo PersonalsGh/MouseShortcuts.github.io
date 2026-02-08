@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; overflow: hidden; background: transparent; display: flex; flex-direction: column; align-items: center; height: 100vh; }
+    </style>
+</head>
+<body>
+    <script>
+        atOptions = {
+            'key' : '7159ffd15bdcc3d697a9d1863ea3ab81',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    </script>
+    <script src="https://www.highperformanceformat.com/7159ffd15bdcc3d697a9d1863ea3ab81/invoke.js"></script>
+    <script>
+        atOptions = {
+            'key' : '7159ffd15bdcc3d697a9d1863ea3ab81',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    </script>
+    <script src="https://www.highperformanceformat.com/7159ffd15bdcc3d697a9d1863ea3ab81/invoke.js"></script>
+
+    <script>
+        const REFRESH_MS = 60000;
+        function startRefresh() {
+            setTimeout(() => {
+                if (!document.hidden) {
+                    location.reload();
+                } else {
+                    startRefresh();
+                }
+            }, REFRESH_MS);
+        }
+        startRefresh();
+    </script>
+</body>
+</html>
