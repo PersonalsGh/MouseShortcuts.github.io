@@ -14,6 +14,21 @@
     <title>MouseShortcuts - Master Your Workflow</title>
     <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Publisher Tag -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+            // REPLACE with your real ad unit paths after approval
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [[336, 280], [300, 250]], 'web-ad-1').addService(googletag.pubads());
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [[336, 280], [300, 250]], 'web-ad-2').addService(googletag.pubads());
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [[336, 280], [300, 250]], 'web-ad-3').addService(googletag.pubads());
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [[336, 280], [300, 250]], 'web-ad-4').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -119,8 +134,15 @@
         </div>
     </nav>
 
+    <!-- Ad Banner 1: Above Hero -->
+    <div class="flex justify-center py-4 pt-24">
+        <div id="web-ad-1">
+            <script>googletag.cmd.push(function() { googletag.display('web-ad-1'); });</script>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section class="container mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-20 flex flex-col-reverse md:flex-row items-center gap-16">
+    <section class="container mx-auto px-6 pt-8 pb-20 md:pt-16 md:pb-20 flex flex-col-reverse md:flex-row items-center gap-16">
         <div class="w-full md:w-1/2 space-y-8 animate-fade-in-up">
             <h1 class="text-5xl md:text-7xl font-bold text-white leading-[1.1]">
                 Your mouse just got <span class="text-white">smarter.</span>
@@ -178,6 +200,13 @@
         </div>
         </div>
     </section>
+
+    <!-- Ad Banner 2: Above Powerful Gestures -->
+    <div class="flex justify-center py-8 bg-[#0f1014]">
+        <div id="web-ad-2">
+            <script>googletag.cmd.push(function() { googletag.display('web-ad-2'); });</script>
+        </div>
+    </div>
 
     <!-- Features Grid -->
     <section id="features" class="bg-[#141519] py-24 relative overflow-hidden">
@@ -275,6 +304,20 @@
             </div>
         </div>
     </section>
+
+    <!-- Ad Banner 3: Below Guide -->
+    <div class="flex justify-center py-8 bg-[#0f1014]">
+        <div id="web-ad-3">
+            <script>googletag.cmd.push(function() { googletag.display('web-ad-3'); });</script>
+        </div>
+    </div>
+
+    <!-- Ad Banner 4: Above Bottom CTA -->
+    <div class="flex justify-center py-8 bg-[#0f1014]">
+        <div id="web-ad-4">
+            <script>googletag.cmd.push(function() { googletag.display('web-ad-4'); });</script>
+        </div>
+    </div>
 
     <!-- Bottom CTA Section -->
     <section id="download" class="relative py-32 overflow-hidden">
