@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: transparent;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .ad-slot {
+            display: inline-block;
+        }
+    </style>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+            // ============================================
+            // REPLACE these with your real ad unit paths
+            // Format: /YOUR_NETWORK_CODE/your-ad-unit-name
+            // ============================================
+
+            // Test ad units (Google's sample ads - replace with yours after approval)
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [300, 250], 'ad-slot-1')
+                .addService(googletag.pubads());
+
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [300, 250], 'ad-slot-2')
+                .addService(googletag.pubads());
+
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    </script>
+</head>
+<body>
+    <div id="ad-slot-1" class="ad-slot">
+        <script>googletag.cmd.push(function() { googletag.display('ad-slot-1'); });</script>
+    </div>
+    <div id="ad-slot-2" class="ad-slot">
+        <script>googletag.cmd.push(function() { googletag.display('ad-slot-2'); });</script>
+    </div>
+
+    <!-- Auto-refresh ads every 2 minutes (only when tab is visible) -->
+    <script>
+        setInterval(function() {
+            if (!document.hidden) {
+                googletag.cmd.push(function() {
+                    googletag.pubads().refresh();
+                });
+            }
+        }, 120000);
+    </script>
+</body>
+</html>
