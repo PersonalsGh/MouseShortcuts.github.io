@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YCWYPGYXQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3YCWYPGYXQ');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact | MouseShortcuts</title>
+    <meta name="description" content="Learn about MouseShortcuts, the indie-developed Windows app that turns mouse gestures into powerful keyboard shortcuts. Get in touch with the developer.">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0f1014; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f1014; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+</head>
+<body class="text-gray-300 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0f1014]/90 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-white text-xl font-bold tracking-tight">MouseShortcuts</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html#features" class="hover:text-white transition-colors">Features</a>
+                <a href="index.html#guides" class="hover:text-white transition-colors">Guides</a>
+                <a href="about.html" class="text-white transition-colors">About</a>
+            </div>
+            <a href="index.html#download" class="bg-white text-black px-5 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-colors">
+                Download
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mx-auto px-6 pt-28 pb-20 max-w-3xl">
+        <h1 class="text-4xl font-bold text-white mb-12">About MouseShortcuts</h1>
+
+        <div class="space-y-12">
+
+            <!-- About the App -->
+            <section class="space-y-6 text-gray-300 leading-relaxed">
+                <h2 class="text-2xl font-bold text-white">What is MouseShortcuts?</h2>
+                <p>
+                    MouseShortcuts is a lightweight Windows desktop application that maps common keyboard shortcuts to intuitive mouse gestures. Instead of reaching for Ctrl+C, Ctrl+V, or PrintScreen, you perform simple mouse actions — double-clicks, combination clicks, swipes, and edge hovers — to trigger the same commands instantly.
+                </p>
+                <p>
+                    The app runs quietly in the background and intercepts mouse input system-wide. When it detects a recognized gesture pattern, it executes the corresponding action. When it doesn't detect a gesture, your mouse behaves completely normally. There's no learning curve to worry about — the gestures are designed to feel natural from the first use.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-[#1a1b20] border border-white/5 rounded-xl p-6 text-center">
+                        <div class="text-3xl font-bold text-white mb-2">8</div>
+                        <div class="text-sm text-gray-500">Built-in gestures</div>
+                    </div>
+                    <div class="bg-[#1a1b20] border border-white/5 rounded-xl p-6 text-center">
+                        <div class="text-3xl font-bold text-white mb-2">&lt;30MB</div>
+                        <div class="text-sm text-gray-500">Memory usage</div>
+                    </div>
+                    <div class="bg-[#1a1b20] border border-white/5 rounded-xl p-6 text-center">
+                        <div class="text-3xl font-bold text-white mb-2">0</div>
+                        <div class="text-sm text-gray-500">Data collected</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why We Built It -->
+            <section class="space-y-6 text-gray-300 leading-relaxed">
+                <h2 class="text-2xl font-bold text-white">Why We Built It</h2>
+                <p>
+                    The idea for MouseShortcuts came from a simple frustration: the constant back-and-forth between mouse and keyboard during everyday tasks. Selecting text with the mouse, reaching for the keyboard to copy, going back to the mouse to navigate, reaching for the keyboard again to paste — it's a cycle that repeats hundreds of times a day.
+                </p>
+                <p>
+                    We realized that the mouse is already in your hand for most of these operations. Why not let it handle the shortcuts too? The result is an app that keeps your hand where it already is, saving time and reducing the repetitive strain that comes with constant device switching.
+                </p>
+            </section>
+
+            <!-- The Developer -->
+            <section class="space-y-6 text-gray-300 leading-relaxed">
+                <h2 class="text-2xl font-bold text-white">The Developer</h2>
+                <p>
+                    MouseShortcuts is an indie-developed project — built, maintained, and supported by a solo developer passionate about creating tools that make daily computing more efficient. Every feature, every gesture, and every line of code is crafted with care and a focus on the user experience.
+                </p>
+                <p>
+                    The app is built with modern technologies: Electron for the desktop shell, React for the interface, and AutoHotkey for the low-level gesture engine. This combination provides a polished UI with the system-level access needed for reliable gesture detection.
+                </p>
+            </section>
+
+            <!-- Open Source -->
+            <section class="space-y-6 text-gray-300 leading-relaxed">
+                <h2 class="text-2xl font-bold text-white">Transparency</h2>
+                <p>
+                    We believe in transparency. MouseShortcuts does not collect usage data, telemetry, or any information about what you do on your computer. The only personal data we store is your email address for account authentication — and you can delete that at any time from within the app.
+                </p>
+                <p>
+                    The desktop application is distributed via GitHub Releases, so you can always verify exactly what you're downloading. If you have questions about how the app works or what it does, feel free to reach out.
+                </p>
+            </section>
+
+            <!-- Contact -->
+            <section class="space-y-6">
+                <h2 class="text-2xl font-bold text-white">Contact & Support</h2>
+
+                <div class="bg-[#1a1b20] border border-white/5 rounded-2xl overflow-hidden">
+                    <div class="p-6 space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">Email</h3>
+                                <p class="text-gray-400 text-sm mb-2">For general inquiries, support requests, or feedback.</p>
+                                <a href="mailto:mouseshortcuts@gmail.com" class="text-blue-400 hover:text-white transition-colors">mouseshortcuts@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-white/5"></div>
+
+                        <!-- GitHub -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold mb-1">GitHub</h3>
+                                <p class="text-gray-400 text-sm mb-2">Download releases and report issues.</p>
+                                <a href="https://github.com/PersonalsGh/MouseShortcuts.github.io" class="text-blue-400 hover:text-white transition-colors" target="_blank" rel="noopener">github.com/PersonalsGh/MouseShortcuts.github.io</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support Section -->
+            <section class="space-y-6">
+                <h2 class="text-2xl font-bold text-white">Need Help?</h2>
+                <p class="text-gray-300 leading-relaxed">
+                    Check out our guides for detailed walkthroughs and troubleshooting:
+                </p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <a href="guides/ergonomic-mouse-gestures.html" class="block p-5 bg-[#1a1b20] border border-white/5 rounded-xl hover:bg-[#202126] transition-colors">
+                        <h3 class="text-white font-semibold text-sm mb-1">Ergonomic Guide</h3>
+                        <p class="text-xs text-gray-500">Reduce strain with gestures</p>
+                    </a>
+                    <a href="guides/mouse-gestures-vs-keyboard.html" class="block p-5 bg-[#1a1b20] border border-white/5 rounded-xl hover:bg-[#202126] transition-colors">
+                        <h3 class="text-white font-semibold text-sm mb-1">Speed Comparison</h3>
+                        <p class="text-xs text-gray-500">Gestures vs. keyboard shortcuts</p>
+                    </a>
+                    <a href="guides/advanced-gesture-configuration.html" class="block p-5 bg-[#1a1b20] border border-white/5 rounded-xl hover:bg-[#202126] transition-colors">
+                        <h3 class="text-white font-semibold text-sm mb-1">Advanced Setup</h3>
+                        <p class="text-xs text-gray-500">Configure custom combos</p>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 bg-[#0f1014]">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <span class="text-gray-400 font-semibold">MouseShortcuts</span>
+            </div>
+            <p class="mb-4 md:mb-0">&copy; 2026 MouseShortcuts. All rights reserved.</p>
+            <div class="flex space-x-8">
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                <a href="about.html" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
