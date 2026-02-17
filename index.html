@@ -474,5 +474,19 @@
             });
         });
     </script>
+
+    <!-- Ad slot render tracking -->
+    <script>
+        googletag.cmd.push(function() {
+            googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+                gtag('event', 'ad_slot_render', {
+                    'ad_slot': event.slot.getSlotElementId(),
+                    'ad_filled': !event.isEmpty,
+                    'source': 'website',
+                    'page': window.location.pathname
+                });
+            });
+        });
+    </script>
 </body>
 </html>
