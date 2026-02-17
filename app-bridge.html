@@ -3,35 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YCWYPGYXQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3YCWYPGYXQ');
+    </script>
     <style>
         body {
             margin: 0;
             overflow: hidden;
             background: transparent;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             justify-content: center;
-            padding: 10px;
+            align-items: center;
+            min-height: 100vh;
         }
         .ad-slot {
-            display: inline-block;
+            display: none;
+        }
+        .ad-slot.active {
+            display: block;
         }
     </style>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <script>
+        // Parse ?unit= parameter to show the correct ad slot
+        var params = new URLSearchParams(window.location.search);
+        var unit = params.get('unit') || 'leaderboard';
+
+        // Map unit names to slot configs
+        var SLOT_CONFIG = {
+            leaderboard:    { size: [728, 90],  id: 'ad-leaderboard' },
+            rectangleLeft:  { size: [336, 280], id: 'ad-rectangle-left' },
+            rectangleRight: { size: [336, 280], id: 'ad-rectangle-right' },
+            sidebarAd:      { size: [300, 250], id: 'ad-sidebar' }
+        };
+
+        var config = SLOT_CONFIG[unit] || SLOT_CONFIG.leaderboard;
+
         window.googletag = window.googletag || {cmd: []};
         googletag.cmd.push(function() {
             // ============================================
-            // REPLACE these with your real ad unit paths
+            // REPLACE with your real ad unit paths
             // Format: /YOUR_NETWORK_CODE/your-ad-unit-name
             // ============================================
-
-            // Test ad units (Google's sample ads - replace with yours after approval)
-            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [300, 250], 'ad-slot-1')
-                .addService(googletag.pubads());
-
-            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', [300, 250], 'ad-slot-2')
+            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', config.size, config.id)
                 .addService(googletag.pubads());
 
             googletag.pubads().enableSingleRequest();
@@ -41,12 +60,22 @@
     </script>
 </head>
 <body>
-    <div id="ad-slot-1" class="ad-slot">
-        <script>googletag.cmd.push(function() { googletag.display('ad-slot-1'); });</script>
-    </div>
-    <div id="ad-slot-2" class="ad-slot">
-        <script>googletag.cmd.push(function() { googletag.display('ad-slot-2'); });</script>
-    </div>
+    <!-- All possible ad slots - only the matching one is shown -->
+    <div id="ad-leaderboard" class="ad-slot"></div>
+    <div id="ad-rectangle-left" class="ad-slot"></div>
+    <div id="ad-rectangle-right" class="ad-slot"></div>
+    <div id="ad-sidebar" class="ad-slot"></div>
+
+    <script>
+        // Activate and display only the matching slot
+        googletag.cmd.push(function() {
+            var el = document.getElementById(config.id);
+            if (el) {
+                el.classList.add('active');
+                googletag.display(config.id);
+            }
+        });
+    </script>
 
     <!-- Auto-refresh ads every 2 minutes (only when tab is visible) -->
     <script>
@@ -57,6 +86,20 @@
                 });
             }
         }, 120000);
+    </script>
+
+    <!-- Ad slot render tracking -->
+    <script>
+        googletag.cmd.push(function() {
+            googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+                gtag('event', 'ad_slot_render', {
+                    'ad_slot': event.slot.getSlotElementId(),
+                    'ad_filled': !event.isEmpty,
+                    'source': 'desktop-app',
+                    'ad_unit': unit
+                });
+            });
+        });
     </script>
 </body>
 </html>
