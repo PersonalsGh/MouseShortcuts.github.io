@@ -39,7 +39,7 @@
             leaderboard:    { size: [728, 90],  id: 'ad-leaderboard' },
             rectangleLeft:  { size: [336, 280], id: 'ad-rectangle-left' },
             rectangleRight: { size: [336, 280], id: 'ad-rectangle-right' },
-            sidebarAd:      { size: [300, 250], id: 'ad-sidebar' }
+            sidebarAd:      { size: [250, 250], id: 'ad-sidebar' }
         };
 
         var config = SLOT_CONFIG[unit] || SLOT_CONFIG.leaderboard;
@@ -88,7 +88,7 @@
         }, 120000);
     </script>
 
-    <!-- Ad slot render tracking -->
+    <!-- Ad slot render tracking + placeholder fallback -->
     <script>
         googletag.cmd.push(function() {
             googletag.pubads().addEventListener('slotRenderEnded', function(event) {
@@ -98,6 +98,18 @@
                     'source': 'desktop-app',
                     'ad_unit': unit
                 });
+
+                // Show placeholder when ad slot is empty
+                if (event.isEmpty) {
+                    var slotId = event.slot.getSlotElementId();
+                    var el = document.getElementById(slotId);
+                    if (el) {
+                        var w = Array.isArray(config.size[0]) ? config.size[0][0] : config.size[0];
+                        var h = Array.isArray(config.size[0]) ? config.size[0][1] : config.size[1];
+                        el.style.display = 'block';
+                        el.innerHTML = '<div style="width:' + w + 'px;height:' + h + 'px;background:#d9d9d9;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:16px;color:#999;border-radius:4px;">' + w + ' x ' + h + '</div>';
+                    }
+                }
             });
         });
     </script>
