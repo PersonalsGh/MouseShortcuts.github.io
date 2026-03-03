@@ -772,14 +772,7 @@ textarea {
 }
 
 /* ===== RESPONSIVE ===== */
-
-/* Hide mobile-only elements on desktop */
-.hero-mobile-btn {
-  display: none;
-}
-
 @media (max-width: 768px) {
-  /* ---- NAVIGATION ---- */
   .nav {
     position: fixed;
     top: var(--header-height);
@@ -821,95 +814,54 @@ textarea {
     display: flex;
   }
 
-  /* ---- HERO: full-screen, centered, app-store style ---- */
+  /* Hero */
   .hero {
-    min-height: 100vh;
-    padding: var(--space-xl) 0;
-    align-items: center;
-    justify-content: center;
+    min-height: auto;
+    padding: var(--space-3xl) 0 var(--space-2xl);
   }
 
   .hero-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: var(--space-lg);
     padding: 0 var(--space-md);
-    gap: 0;
   }
 
   .hero-content {
     max-width: 100%;
   }
 
-  .hero-title {
-    font-size: clamp(2.25rem, 9vw, 3rem);
-  }
-
-  .hero-tagline {
-    font-size: 1.125rem;
-  }
-
-  /* Hide desktop scroll hint, show download button instead */
-  .hero-download-hint {
-    display: none;
-  }
-
-  .hero-mobile-btn {
-    display: inline-flex;
-    margin-top: var(--space-xl);
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-  }
-
-  /* ---- ADS: hide all on mobile ---- */
+  /* Hide rectangle ads beside hero and prose on mobile */
   .hero .ad-slot-rectangle,
-  .prose-ads,
-  .ad-slot-leaderboard {
+  .prose-ads {
     display: none;
   }
 
-  /* ---- SECTIONS ---- */
-  .section {
-    padding: var(--space-2xl) 0;
-  }
-
-  .container {
-    padding: 0 var(--space-md);
-  }
-
-  /* ---- PROSE: centered ---- */
+  /* Prose section stacks */
   .prose-with-ads {
     flex-direction: column;
   }
 
-  .prose {
-    text-align: center;
-    max-width: 100%;
+  /* Sections */
+  .section {
+    padding: var(--space-2xl) 0;
   }
 
-  /* ---- FEATURE CARDS: centered text ---- */
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-sm);
-  }
-
-  .feature-card {
-    text-align: center;
-  }
-
-  /* ---- DOWNLOAD SECTION ---- */
   .download-section {
     padding: var(--space-2xl) 0;
   }
 
+  /* Download button full width */
   .download-cta .btn-lg {
     width: 100%;
     max-width: 360px;
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
   }
 
-  /* ---- TOAST ---- */
+  /* Features */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Toast */
   .download-toast {
     left: 16px;
     right: 16px;
@@ -919,15 +871,21 @@ textarea {
 }
 
 @media (max-width: 480px) {
-  .container,
-  .header-container,
-  .hero-container {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .header-container {
     padding: 0 var(--space-sm);
   }
 
   .footer-links {
     flex-direction: column;
     gap: var(--space-sm);
+  }
+
+  .hero-container {
+    padding: 0 var(--space-sm);
   }
 
   .download-warning {
