@@ -814,22 +814,81 @@ textarea {
     display: flex;
   }
 
+  /* Hero */
   .hero {
-    min-height: 70vh;
+    min-height: auto;
+    padding: var(--space-3xl) 0 var(--space-2xl);
+  }
+
+  .hero-container {
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: 0 var(--space-md);
   }
 
   .hero-content {
     max-width: 100%;
   }
 
+  /* Hide rectangle ads beside hero and prose on mobile */
+  .hero .ad-slot-rectangle,
+  .prose-ads {
+    display: none;
+  }
+
+  /* Prose section stacks */
+  .prose-with-ads {
+    flex-direction: column;
+  }
+
+  /* Sections */
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .download-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  /* Download button full width */
+  .download-cta .btn-lg {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  /* Features */
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Toast */
+  .download-toast {
+    left: 16px;
+    right: 16px;
+    top: 16px;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .header-container {
+    padding: 0 var(--space-sm);
+  }
+
   .footer-links {
     flex-direction: column;
     gap: var(--space-sm);
+  }
+
+  .hero-container {
+    padding: 0 var(--space-sm);
+  }
+
+  .download-warning {
+    font-size: 0.8125rem;
   }
 }
