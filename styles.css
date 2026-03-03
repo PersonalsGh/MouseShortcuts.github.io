@@ -830,15 +830,21 @@ textarea {
     max-width: 100%;
   }
 
-  /* Hide rectangle ads beside hero and prose on mobile */
-  .hero .ad-slot-rectangle,
-  .prose-ads {
-    display: none;
+  /* Rectangle ads: full-width below content on mobile */
+  .ad-slot-rectangle {
+    width: 100%;
+    height: 200px;
   }
 
-  /* Prose section stacks */
+  /* Prose section stacks: text first, ads below */
   .prose-with-ads {
     flex-direction: column;
+  }
+
+  .prose-ads {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   /* Sections */
