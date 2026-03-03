@@ -12,106 +12,26 @@
         gtag('config', 'G-3YCWYPGYXQ');
     </script>
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: transparent;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .ad-slot {
-            display: none;
-        }
-        .ad-slot.active {
-            display: block;
-        }
+        body { margin: 0; overflow: hidden; background: transparent;
+               display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        img { display: block; cursor: pointer; }
     </style>
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    <script>
-        // Parse ?unit= parameter to show the correct ad slot
-        var params = new URLSearchParams(window.location.search);
-        var unit = params.get('unit') || 'leaderboard';
-
-        // Map unit names to slot configs
-        var SLOT_CONFIG = {
-            leaderboard:    { size: [728, 90],  id: 'ad-leaderboard' },
-            rectangleLeft:  { size: [336, 280], id: 'ad-rectangle-left' },
-            rectangleRight: { size: [336, 280], id: 'ad-rectangle-right' },
-            sidebarAd:      { size: [250, 250], id: 'ad-sidebar' }
-        };
-
-        var config = SLOT_CONFIG[unit] || SLOT_CONFIG.leaderboard;
-
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function() {
-            // ============================================
-            // REPLACE with your real ad unit paths
-            // Format: /YOUR_NETWORK_CODE/your-ad-unit-name
-            // ============================================
-            googletag.defineSlot('/6355419/Travel/Europe/France/Paris', config.size, config.id)
-                .addService(googletag.pubads());
-
-            googletag.pubads().enableSingleRequest();
-            googletag.pubads().collapseEmptyDivs();
-            googletag.enableServices();
-        });
-    </script>
 </head>
 <body>
-    <!-- All possible ad slots - only the matching one is shown -->
-    <div id="ad-leaderboard" class="ad-slot"></div>
-    <div id="ad-rectangle-left" class="ad-slot"></div>
-    <div id="ad-rectangle-right" class="ad-slot"></div>
-    <div id="ad-sidebar" class="ad-slot"></div>
-
     <script>
-        // Activate and display only the matching slot
-        googletag.cmd.push(function() {
-            var el = document.getElementById(config.id);
-            if (el) {
-                el.classList.add('active');
-                googletag.display(config.id);
-            }
-        });
-    </script>
-
-    <!-- Auto-refresh ads every 2 minutes (only when tab is visible) -->
-    <script>
-        setInterval(function() {
-            if (!document.hidden) {
-                googletag.cmd.push(function() {
-                    googletag.pubads().refresh();
-                });
-            }
-        }, 120000);
-    </script>
-
-    <!-- Ad slot render tracking + placeholder fallback -->
-    <script>
-        googletag.cmd.push(function() {
-            googletag.pubads().addEventListener('slotRenderEnded', function(event) {
-                gtag('event', 'ad_slot_render', {
-                    'ad_slot': event.slot.getSlotElementId(),
-                    'ad_filled': !event.isEmpty,
-                    'source': 'desktop-app',
-                    'ad_unit': unit
-                });
-
-                // Show placeholder when ad slot is empty
-                if (event.isEmpty) {
-                    var slotId = event.slot.getSlotElementId();
-                    var el = document.getElementById(slotId);
-                    if (el) {
-                        var w = Array.isArray(config.size[0]) ? config.size[0][0] : config.size[0];
-                        var h = Array.isArray(config.size[0]) ? config.size[0][1] : config.size[1];
-                        el.style.display = 'block';
-                        el.innerHTML = '<div style="width:' + w + 'px;height:' + h + 'px;background:#d9d9d9;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;font-size:16px;color:#999;border-radius:4px;">' + w + ' x ' + h + '</div>';
-                    }
-                }
-            });
-        });
+        var unit = new URLSearchParams(window.location.search).get('unit') || 'leaderboard';
+        var SLOTS = {
+            leaderboard:    { w: 728, h: 90,  img: 'https://mouseshortcuts.com/logo.png', link: 'https://mouseshortcuts.com/' },
+            rectangleLeft:  { w: 336, h: 280, img: 'https://mouseshortcuts.com/logo.png', link: 'https://mouseshortcuts.com/' },
+            rectangleRight: { w: 336, h: 280, img: 'https://mouseshortcuts.com/logo.png', link: 'https://mouseshortcuts.com/' },
+            sidebarAd:      { w: 250, h: 250, img: 'https://mouseshortcuts.com/logo.png', link: 'https://mouseshortcuts.com/' }
+        };
+        var s = SLOTS[unit] || SLOTS.leaderboard;
+        document.write(
+            '<a href="' + s.link + '" target="_blank">' +
+            '<img src="' + s.img + '" width="' + s.w + '" height="' + s.h + '">' +
+            '</a>'
+        );
     </script>
 </body>
 </html>
