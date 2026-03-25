@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — Mouse Shortcuts</title>
-  <meta name="description" content="Learn about the creator and story behind Mouse Shortcuts.">
+  <meta name="description" content="Meet Joel Poothingal, the solo founder behind Mouse Shortcuts. Learn the full story of how a university student built a productivity app from scratch in 4 months.">
   <link rel="stylesheet" href="styles.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YCWYPGYXQ"></script>
   <script>
@@ -25,6 +25,7 @@
         <a href="how-to-build.html" class="nav-link">How to Build</a>
         <a href="monetization.html" class="nav-link">Monetization</a>
         <a href="marketing.html" class="nav-link">Marketing</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
         <div class="mobile-download">
           <a href="index.html#download" class="download-hint">To download, scroll to the bottom of the page ↓</a>
         </div>
@@ -45,35 +46,96 @@
       <div class="content-hero">
         <div class="content-container">
           <h1 class="content-title">About Us</h1>
-          <p class="content-subtitle">The story behind Mouse Shortcuts.</p>
+          <p class="content-subtitle">How a university student in Vancouver built a productivity app from scratch in 4 months — and grew it to 500+ users with two Instagram videos.</p>
         </div>
       </div>
       <div class="content-body">
         <div class="content-container">
-          <h2>The Story</h2>
+          <h2>Meet the Founder</h2>
           <p>
-            Mouse Shortcuts was built by a university student and solo founder who
-            wanted a faster way to work on Windows — and couldn't find
-            anything that did exactly what was needed. So they built it.
+            Hi, I'm <strong>Joel Poothingal</strong> — a data science major and university student based in Vancouver, Canada. I built Mouse Shortcuts by myself as a solo founder, and I want to share the full story of how and why it happened.
+          </p>
+
+          <h2>The Problem That Started It All</h2>
+          <p>
+            Like most university students in 2025, I was spending hours every day working with AI tools — ChatGPT, Claude, Gemini — for assignments, research, and building side projects. My workflow was almost entirely copy-paste: I would select text from a document, copy it, switch to the AI chat, paste it, read the response, copy that, switch back, and paste again. Over and over, dozens of times per session.
           </p>
           <p>
-            What started as a personal project quickly turned into something bigger.
-            After sharing a demo video on Instagram that gained over 100K views, it
-            became clear that other people wanted this too.
+            The problem was that this workflow constantly forced me to switch between my mouse and keyboard. I would be scrolling through a document with my mouse, then have to reach over to hit Ctrl+C. Then I would click into the AI chat window, then reach back to hit Ctrl+V. It sounds minor, but when you are doing it 50 or 100 times in a single study session, the constant hand-switching becomes genuinely frustrating. I wanted to do everything with one hand — the hand already on the mouse.
+          </p>
+          <p>
+            I searched for existing tools that could map common keyboard shortcuts to mouse gestures on Windows. I found a few obscure utilities, but none of them did exactly what I needed. Most were outdated, overly complex, or designed for power users who wanted full macro scripting. I just wanted simple, intuitive gestures — double-click to copy, double-click to paste, that kind of thing. Nothing like that existed.
+          </p>
+          <p>
+            So I decided to build it myself.
+          </p>
+
+          <h2>The Development Timeline</h2>
+          <p>
+            I started building Mouse Shortcuts at the end of December 2025. The entire journey from initial idea to a production-ready, code-signed, publicly available application took approximately four months. Here is how it unfolded:
+          </p>
+
+          <h3>Phase 1: Prototyping (December 2025 – January 2026)</h3>
+          <p>
+            I chose <strong>Electron</strong> as the framework because it was mainstream, well-documented, and worked extremely well with AI-assisted development tools like Claude Code. Using Claude Code inside VS Code, I was able to go from zero to a working prototype in a matter of weeks. The core engine is powered by AutoHotkey, which operates at the OS input-hook level to detect mouse gestures and translate them into keyboard shortcuts. The challenge here was making the AutoHotkey scripts sophisticated enough to distinguish between a normal double-click (like opening a file) and the deliberate double-click gesture meant to trigger a shortcut. After a lot of iteration, I got it working reliably without interfering with normal mouse behavior.
+          </p>
+
+          <h3>Phase 2: Building the Full Product (January – February 2026)</h3>
+          <p>
+            Once the core gesture engine was working, I built out the full application — the system tray integration, the user interface, the account system using Supabase for authentication, and the affiliate marketing infrastructure using Electron's WebContentsView. I also designed and redesigned the UI multiple times. The first few versions looked rough, and I kept iterating until I found a design that felt clean and professional enough to ship.
+          </p>
+
+          <h3>Phase 3: Code Signing and Legal (February – March 2026)</h3>
+          <p>
+            This was the most painful phase. Without a code signing certificate, Windows shows a terrifying "Windows protected your PC" SmartScreen warning that makes your app look like malware. I needed an EV (Extended Validation) certificate to bypass this. The process involved registering a legal business entity, getting listed in third-party directories, and going through identity verification with a Certificate Authority. I wasted significant time and nearly got scammed by a fraudulent website posing as a legitimate certificate reseller before eventually purchasing through a legitimate provider. The entire registration and legalities process consumed far more time and money than I expected.
+          </p>
+
+          <h3>Phase 4: Launch and Marketing (March 2026)</h3>
+          <p>
+            I posted a demo video on an Instagram account I had been using casually. The first video hit 100,000 views. I actually took it down because the growth was happening faster than I could handle at the time — I was still a solo developer with no support infrastructure. My second video hit over 400,000 views with more than 13,000 saves. Using ManyChat to automate download links via DMs, I converted that attention into real users. As of March 2026, Mouse Shortcuts has over 500 registered users.
+          </p>
+
+          <h2>Lessons Learned Along the Way</h2>
+
+          <h3>Paid Plans Do Not Work for Everyone</h3>
+          <p>
+            I originally planned to charge $3/month as a subscription using Lemon Squeezy as my payment processor. I spent considerable time integrating the payment flow, only to learn the hard way that the majority of my audience — which is largely international, tier-3 traffic from countries with lower purchasing power — was not willing to pay a monthly fee for a utility app. After seeing very low conversion on the paid model, I made the decision to make Mouse Shortcuts completely free and monetize through website advertising (Google AdSense) and in-app affiliate marketing instead. This was one of the most important strategic decisions of the entire project.
+          </p>
+
+          <h3>Cheap Ad Networks Are Not Worth It</h3>
+          <p>
+            Before applying for Google AdSense, I tried a cheaper, easier-to-approve ad network called Adsterra. The experience was terrible — the ads were full of pop-ups, redirects, and borderline malicious content that made my website look unprofessional and untrustworthy. I pulled them off the site within days and committed to waiting for Google AdSense approval, which is slower but delivers a dramatically better user experience.
+          </p>
+
+          <h3>Viral Growth Can Be Overwhelming</h3>
+          <p>
+            When my first video started gaining traction, I was not prepared for the volume of comments, DMs, and download attempts. I had to take the video down temporarily because I did not yet have the infrastructure to handle that many users. If you are building a product as a solo developer, make sure your onboarding, support, and server capacity are ready before you start actively marketing.
           </p>
 
           <h2>The Mission</h2>
           <p>
-            Mouse Shortcuts exists to make your everyday computer use faster and
-            more intuitive. We believe your mouse is an underutilized tool, and
-            with the right software, it can do so much more than point and click.
+            Mouse Shortcuts exists to make everyday computer use faster and more intuitive. Your mouse is an underutilized tool — most people only use it to point and click. But with the right software, your mouse can copy, paste, screenshot, navigate, and manage windows without you ever reaching for the keyboard. That is the core idea, and every feature in the app is designed around that principle.
           </p>
+          <p>
+            I chose the specific gestures in Mouse Shortcuts — double-click to copy, double-click to paste, triple-click to select all, hold both buttons for a screenshot — because these are the most commonly used keyboard shortcuts that virtually everyone needs, every day. You do not need to know how to write AutoHotkey scripts or configure complex macro tools. Mouse Shortcuts gives you the most useful shortcuts out of the box, mapped to gestures that feel natural after a few minutes of use.
+          </p>
+
+          <h2>What's Next</h2>
+          <p>
+            Mouse Shortcuts is actively maintained and evolving. Here is what I am working on and planning for the future:
+          </p>
+          <ul>
+            <li><strong>Mac version:</strong> A native macOS version of Mouse Shortcuts is in the planning stage. Many users have requested this, and it is my next major development priority.</li>
+            <li><strong>Additional shortcuts:</strong> If users request new gestures or shortcut mappings, I plan to add them. The app was designed to be extensible, so new shortcuts can be added without breaking existing behavior.</li>
+            <li><strong>Ongoing updates:</strong> I will continue to post updates about new features, download milestones, and lessons learned from the development and marketing process on this website.</li>
+          </ul>
 
           <h2>Open Development</h2>
           <p>
-            This website documents the entire journey — from building the app to
-            marketing and monetizing it. We believe in transparency and want to
-            help other indie developers build, ship, and grow their own products.
+            This website is not just a download page for the app. It documents the entire journey — from the initial idea, to building the product, to marketing it on social media, to monetizing it as a solo indie developer. Every guide on this site (the <a href="how-to-build.html">How to Build</a> guide, the <a href="monetization.html">Monetization</a> breakdown, and the <a href="marketing.html">Marketing</a> playbook) is written from first-hand experience. I share what worked, what failed, and what I would do differently.
+          </p>
+          <p>
+            My goal is to help other indie developers — especially students and first-time founders — understand what it actually takes to build, ship, and grow a real software product. Not the sanitized version from a tutorial, but the honest version with all the setbacks, surprises, and lessons included.
           </p>
         </div>
       </div>
@@ -90,6 +152,7 @@
       <nav class="footer-links">
         <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
         <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
         <a href="contact.html" class="footer-link">Contact Us</a>
         <a href="about.html" class="footer-link">About Us</a>
       </nav>
